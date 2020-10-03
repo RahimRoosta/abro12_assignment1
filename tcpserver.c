@@ -397,7 +397,7 @@ int main(int argc, char *argv[])
 			{
 				printf("version is not matching\n");
 				m=send(clientfd, str3, sizeof(str3), 0);
-				exit(0);
+				//exit(0);
 			}
 		/** Echo back the received data to the client */
 		//send(clientfd, buffer, recv(clientfd, buffer, MAX_BUF, 0), 0);
