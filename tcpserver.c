@@ -147,7 +147,7 @@ int main(int argc, char *argv[])
 								m=send(clientfd, buffer, sizeof(buffer), 0);
 								bzero(buffer, 256);
 								n=recv(clientfd, buffer, sizeof(buffer), 0);
-								//printf("buffer rec: %s\n", buffer);
+								printf("Calculation rec from Client: %s\n", buffer);
 								//check the answer
 								ans1 = r3+r4;
 								//printf("answer1: --%d--\n", ans1);
@@ -160,22 +160,24 @@ int main(int argc, char *argv[])
 								{
 									m=send(clientfd, str, sizeof(str), 0);
 									printf("msg send to client: %s\n", str);
+									printf("---------------------------\n");
 								}
 								else
 								{
 									m=send(clientfd, str3, sizeof(str3), 0);
 									printf("msg send to client: %s\n", str3);
+									printf("---------------------------\n");
 								}
 							}
 								if (strcmp(arith[r5], div)== 0)
 								{
 									//printf("DIV\n");
 									sprintf(buffer, "%s %d %d\n",div,r3, r4 );
-									//printf("buffer: %s\n", buffer);
+									printf("Assignment sent to Cleint: %s\n", buffer);
 									m=send(clientfd, buffer, sizeof(buffer), 0);
 									bzero(buffer, 256);
 									n=recv(clientfd, buffer, sizeof(buffer), 0);
-									//printf("buffer rec: %s\n", buffer);
+									printf("calculation rec from Client: %s\n", buffer);
 									//check the answer
 									ans1 = r3/r4;
 									//printf("answer1: --%d--\n", ans1);
@@ -188,22 +190,24 @@ int main(int argc, char *argv[])
 									{
 										m=send(clientfd, str, sizeof(str), 0);
 										printf("msg send to client: %s\n", str);
+										printf("---------------------------\n");
 									}
 									else
 									{
 										m=send(clientfd, str3, sizeof(str3), 0);
 										printf("msg send to client: %s\n", str3);
+										printf("---------------------------\n");
 									}
 								}
 								if (strcmp(arith[r5], mul)== 0)
 								{
 									//printf("MUL\n");
 									sprintf(buffer, "%s %d %d\n",mul,r3, r4 );
-									//printf("buffer: %s\n", buffer);
+									printf("Assignment sent to Cleint: %s\n", buffer);
 									m=send(clientfd, buffer, sizeof(buffer), 0);
 									bzero(buffer, 256);
 									n=recv(clientfd, buffer, sizeof(buffer), 0);
-									printf("buffer rec from Client: %s\n", buffer);
+									printf("Calculation rec from Client: %s\n", buffer);
 									//check the answer
 									ans1 = r3*r4;
 									//printf("answer1: --%d--\n", ans1);
@@ -216,18 +220,20 @@ int main(int argc, char *argv[])
 									{
 										m=send(clientfd, str, sizeof(str), 0);
 										printf("msg send to client: %s\n", str);
+										printf("---------------------------\n");
 									}
 									else
 									{
 										m=send(clientfd, str3, sizeof(str3), 0);
 										printf("msg send to client: %s\n", str3);
+										printf("---------------------------\n");
 									}
 								}
 								if (strcmp(arith[r5], sub)== 0)
 								{
 									//printf("SUB\n");
 									sprintf(buffer, "%s %d %d\n",sub,r3, r4 );
-									//printf("buffer: %s\n", buffer);
+									printf("Assignment sent to Client: %s\n", buffer);
 									m=send(clientfd, buffer, sizeof(buffer), 0);
 									bzero(buffer, 256);
 									n=recv(clientfd, buffer, sizeof(buffer), 0);
@@ -244,11 +250,13 @@ int main(int argc, char *argv[])
 									{
 										m=send(clientfd, str, sizeof(str), 0);
 										printf("msg send to client: %s\n", str);
+										printf("---------------------------\n");
 									}
 									else
 									{
 										m=send(clientfd, str3, sizeof(str3), 0);
 										printf("msg send to client: %s\n", str3);
+										printf("---------------------------\n");
 									}
 								}
 							
@@ -289,11 +297,13 @@ int main(int argc, char *argv[])
 									{
 										m=send(clientfd, str, sizeof(str), 0);
 										printf("msg send to client: %s\n", str);
+										printf("---------------------------\n");
 									}
 									else
 									{
 										m=send(clientfd, str3, sizeof(str3), 0);
 										printf("msg send to client: %s\n", str3);
+										printf("---------------------------\n");
 									}	
 								}
 								if (strcmp(arith1[r5], fdiv)== 0)
@@ -317,11 +327,13 @@ int main(int argc, char *argv[])
 									{
 										m=send(clientfd, str, sizeof(str), 0);
 										printf("msg send to client: %s\n", str);
+										printf("---------------------------\n");
 									}
 									else
 									{
 										m=send(clientfd, str3, sizeof(str3), 0);
 										printf("msg send to client: %s\n", str3);
+										printf("---------------------------\n");
 									}	
 									
 								}
@@ -346,11 +358,13 @@ int main(int argc, char *argv[])
 									{
 										m=send(clientfd, str, sizeof(str), 0);
 										printf("msg send to client: %s\n", str);
+										printf("---------------------------\n");
 									}
 									else
 									{
 										m=send(clientfd, str3, sizeof(str3), 0);
 										printf("msg send to client: %s\n", str3);
+										printf("---------------------------\n");
 									}	
 									
 								}
@@ -375,11 +389,13 @@ int main(int argc, char *argv[])
 									{
 										m=send(clientfd, str, sizeof(str), 0);
 										printf("msg send to client: %s\n", str);
+										printf("---------------------------\n");
 									}
 									else
 									{
 										m=send(clientfd, str3, sizeof(str3), 0);
 										printf("msg send to client: %s\n", str3);
+										printf("---------------------------\n");
 									}	
 									
 								}
