@@ -100,7 +100,7 @@ void main(int argc, char *argv[]){
 		char *ptr1 = strstr(buffer, ".");
 		if( ptr1 != NULL)
 		{
-			printf("Floating\n");
+			//printf("Floating\n");
 			//split the string(received data) to array
 			char *ptr = strtok(buffer, delim);
 			while (ptr != NULL)
@@ -110,10 +110,10 @@ void main(int argc, char *argv[]){
 				//printf("%s\n", str3[i++]);
 			
 			}
-			for (i=0; i<3; ++i)
-			{			
-				printf("%s\n", str3[i]);
-			}
+			//for (i=0; i<3; ++i)
+			//{			
+				//printf("%s\n", str3[i]);
+			//}
 			
 			//check the opearion type
 			if (strcmp(str3[0], fadd)==0)
@@ -121,76 +121,76 @@ void main(int argc, char *argv[]){
 					num3 = atof (str3[1]);
 					num4 = atof (str3[2]);
 					cal1 = num3 + num4;
-					printf("In the loop FADD: %f\n", cal1);
+					//printf("Client Calculation: %f\n", cal1);
 					bzero(buffer,256);
 					//bzero(buffer2,256);
 					//printf("\nEnter answer: ");
 					snprintf(buffer,sizeof(buffer), "%f\n", cal1);	//int to buffer
 					//fgets(buffer, 256, stdin);
-					printf("Buffer: ---%s---\n", buffer);
+					printf("Answer sent to Server: -%s-\n", buffer);
 					n=write(clientSocket, buffer, strlen(buffer));
-					printf("Buffer2222: ...%s...\n", buffer);
+					//printf("Buffer2222: ...%s...\n", buffer);
 					
 					bzero(buffer,256);
 					m=recv(clientSocket,buffer,256,0);
-					printf("Buffer3: %s\n", buffer);
+					printf("Answer Confirmed by Server: %s\n", buffer);
 					}
 			if (strcmp(str3[0], fdiv)==0)
 				{
 					num3 = atof (str3[1]);
 					num4 = atof (str3[2]);
 					cal1 = num3 / num4;
-					printf("In the loop FADD: %f\n", cal1);
+					//printf("In the loop FADD: %f\n", cal1);
 					bzero(buffer,256);
 					//bzero(buffer2,256);
 					//printf("\nEnter answer: ");
 					snprintf(buffer,sizeof(buffer), "%f\n", cal1);	//int to buffer
 					//fgets(buffer, 256, stdin);
-					printf("Buffer: ---%s---\n", buffer);
+					//printf("Buffer: ---%s---\n", buffer);
 					n=write(clientSocket, buffer, strlen(buffer));
-					printf("Buffer2222: ...%s...\n", buffer);
+					printf("Answer sent to Server: %s\n", buffer);
 					
 					bzero(buffer,256);
 					m=recv(clientSocket,buffer,256,0);
-					printf("Buffer3: %s\n", buffer);
+					printf("Answer confirmed by Server: %s\n", buffer);
 					}
 			if (strcmp(str3[0], fmul)==0)
 				{
 					num3 = atof (str3[1]);
 					num4 = atof (str3[2]);
 					cal1 = num3 * num4;
-					printf("In the loop FADD: %f\n", cal1);
+					//printf("In the loop FADD: %f\n", cal1);
 					bzero(buffer,256);
 					//bzero(buffer2,256);
 					//printf("\nEnter answer: ");
 					snprintf(buffer,sizeof(buffer), "%f\n", cal1);	//int to buffer
 					//fgets(buffer, 256, stdin);
-					printf("Buffer: ---%s---\n", buffer);
+					//printf("Buffer: ---%s---\n", buffer);
 					n=write(clientSocket, buffer, strlen(buffer));
-					printf("Buffer2222: ...%s...\n", buffer);
+					printf("Answer sent to Server: %s\n", buffer);
 					
 					bzero(buffer,256);
 					m=recv(clientSocket,buffer,256,0);
-					printf("Buffer3: %s\n", buffer);
+					printf("Answer confirmation from Server: %s\n", buffer);
 					}	
 				if (strcmp(str3[0], fsub)==0)
 					{
 						num3 = atof (str3[1]);
 						num4 = atof (str3[2]);
 						cal1 = num3 * num4;
-						printf("In the loop FADD: %f\n", cal1);
+						//printf("In the loop FADD: %f\n", cal1);
 						bzero(buffer,256);
 						//bzero(buffer2,256);
 						//printf("\nEnter answer: ");
 						snprintf(buffer,sizeof(buffer), "%f\n", cal1);	//int to buffer
 						//fgets(buffer, 256, stdin);
-						printf("Buffer: ---%s---\n", buffer);
+						//printf("Buffer: ---%s---\n", buffer);
 						n=write(clientSocket, buffer, strlen(buffer));
-						printf("Buffer2222: ...%s...\n", buffer);
+						printf("Answer sent to Server: %s\n", buffer);
 						
 						bzero(buffer,256);
 						m=recv(clientSocket,buffer,256,0);
-						printf("Buffer3: %s\n", buffer);
+						printf("Answer confirmation from Server:: %s\n", buffer);
 						}						
 		}
 		else
@@ -205,10 +205,10 @@ void main(int argc, char *argv[]){
 				//printf("%s\n", str3[i++]);
 			
 			}
-			for (i=0; i<3; ++i)
-			{			
-				printf("%s\n", str3[i]);
-			}
+			//for (i=0; i<3; ++i)
+			//{			
+				//printf("%s\n", str3[i]);
+			//}
 			
 			//check the opearion type
 			if (strcmp(str3[0], add)==0)
@@ -223,13 +223,13 @@ void main(int argc, char *argv[]){
 					//printf("\nEnter answer: ");
 					sprintf(buffer, "%d\n", cal2);	//int to buffer
 					//fgets(buffer, 256, stdin);
-					printf("Buffer: %s\n", buffer);
-					n=write(clientSocket, buffer, sizeof(int));
 					
+					n=write(clientSocket, buffer, sizeof(int));
+					printf("Answer sent to Server: %s\n", buffer);
 					
 					bzero(buffer,256);
 					m=recv(clientSocket,buffer,256,0);
-					printf("Buffer3: %s\n", buffer);
+					printf("Answer confirmation from Server: %s\n", buffer);
 					
 					
 				}
@@ -246,13 +246,13 @@ void main(int argc, char *argv[]){
 					//printf("\nEnter answer: ");
 					sprintf(buffer, "%d\n", cal2);	//int to buffer
 					//fgets(buffer, 256, stdin);
-					printf("Buffer: %s\n", buffer);
-					n=write(clientSocket, buffer, sizeof(int));
 					
+					n=write(clientSocket, buffer, sizeof(int));
+					printf("Answer sent to Server: %s\n", buffer);
 					
 					bzero(buffer,256);
 					m=recv(clientSocket,buffer,256,0);
-					printf("Buffer3: %s\n", buffer);
+					printf("Answer confirmation from Server: %s\n", buffer);
 					
 					
 				}
@@ -269,13 +269,13 @@ void main(int argc, char *argv[]){
 					//printf("\nEnter answer: ");
 					sprintf(buffer, "%d\n", cal2);	//int to buffer
 					//fgets(buffer, 256, stdin);
-					printf("Buffer: %s\n", buffer);
-					n=write(clientSocket, buffer, sizeof(int));
 					
+					n=write(clientSocket, buffer, sizeof(int));
+					printf("Answer sent to Server: %s\n", buffer);
 					
 					bzero(buffer,256);
 					m=recv(clientSocket,buffer,256,0);
-					printf("Buffer3: %s\n", buffer);
+					printf("Answer confirmation from Server: %s\n", buffer);
 					
 					
 				}
@@ -291,13 +291,13 @@ void main(int argc, char *argv[]){
 					//printf("\nEnter answer: ");
 					sprintf(buffer, "%d\n", cal2);	//int to buffer
 					//fgets(buffer, 256, stdin);
-					printf("Buffer: %s\n", buffer);
-					n=write(clientSocket, buffer, sizeof(int));
 					
+					n=write(clientSocket, buffer, sizeof(int));
+					printf("Answer sent to Server: %s\n", buffer);
 					
 					bzero(buffer,256);
 					m=recv(clientSocket,buffer,256,0);
-					printf("Buffer3: %s\n", buffer);
+					printf("Answer confirmation from Server: %s\n", buffer);
 					
 					
 				}
